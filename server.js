@@ -13,7 +13,7 @@ if (!existsSync(uploadDir)) {
 }
 
 app.use(morgan("dev"))
-app.use(cors())
+app.use(cors({ origin: "*" }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
