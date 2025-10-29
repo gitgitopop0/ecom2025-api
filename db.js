@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
     ssl: {
-        ca: fs.readFileSync(__dirname + '/isrgrootx1.pem')
+        ca: process.env.DB_CA.replace(/\\n/g, '\n')
     }
 })
 
